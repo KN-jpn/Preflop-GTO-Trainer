@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プリフロップGTOトレーナー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Preflop GTO Trainer</h1>
+            <div class="score-board">
+                スコア: <span id="score">0</span> / <span id="total">0</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="quiz-card">
+                <div class="situation-info">
+                    <span class="badge">状況</span>
+                    <span id="situation">読み込み中...</span>
+                </div>
+                <div class="position-info">
+                    <span class="badge">ポジション</span>
+                    <span id="position">読み込み中...</span>
+                </div>
+                
+                <div class="hand-display" id="hand">--</div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-fold" onclick="checkAnswer('Fold')">Fold</button>
+                <button class="btn btn-call" onclick="checkAnswer('Call')">Call</button>
+                <button class="btn btn-raise" onclick="checkAnswer('Raise')">Raise</button>
+            </div>
+
+            <div id="result-container" class="result-container hidden">
+                <div id="result-text" class="result-text"></div>
+                <div id="explanation-text" class="explanation-text"></div>
+                <button id="next-btn" class="btn btn-next" onclick="nextQuestion()">次の問題へ</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

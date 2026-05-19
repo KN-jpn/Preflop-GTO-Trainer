@@ -1,0 +1,137 @@
+/* 全体のリセットと背景設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #1a2e22; /* ポーカーテーブル風の深い緑 */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px; /* スマホサイズに最適化 */
+    background-color: #141f19;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #2c4a39;
+    padding-bottom: 12px;
+}
+
+h1 {
+    font-size: 18pt;
+    color: #4caf50;
+}
+
+.score-board {
+    font-size: 12pt;
+    background-color: #2c4a39;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* クイズ表示部分 */
+.quiz-card {
+    background-color: #1f3328;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.situation-info, .position-info {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    text-align: left;
+}
+
+.badge {
+    background-color: #385e46;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 9pt;
+    margin-right: 8px;
+}
+
+.hand-display {
+    font-size: 36pt;
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ボタンのデザイン */
+.action-buttons {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14pt;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-fold { background-color: #795548; color: white; }
+.btn-fold:hover { background-color: #5d4037; }
+
+.btn-call { background-color: #2196f3; color: white; }
+.btn-call:hover { background-color: #1976d2; }
+
+.btn-raise { background-color: #e91e63; color: white; }
+.btn-raise:hover { background-color: #c2185b; }
+
+.btn-next {
+    background-color: #4caf50;
+    color: white;
+    margin-top: 12px;
+}
+
+/* 結果表示 */
+.result-container {
+    background-color: #263238;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+
+.result-text {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.correct { color: #4caf50; }
+.incorrect { color: #f44336; }
+
+.explanation-text {
+    font-size: 11pt;
+    color: #b0bec5;
+    line-height: 1.5;
+}
+
+/* 表示・非表示の切り替え */
+.hidden { display: none; }
