@@ -3,7 +3,7 @@
 ポーカー（テキサスホールデム）の初心者向けに作成した、プリフロップでの最適な戦術（GTO）をクイズ形式で学べるWEBアプリケーションです。
 
 ## 🌐 アプリケーションURL
-実際に遊べるURL（GitHub Pages）:**https://kn-jpn.github.io/Preflop-GTO-Trainer/**
+実際に遊べるURL（GitHub Pages）:　**https://kn-jpn.github.io/Preflop-GTO-Trainer/**
 
 ## ⭐ 開発の背景・目的
 ポーカーの勝率に最も直結するプリフロップの習得を、移動時間などの隙間時間にスマホ一台でサクサク練習できるツールが欲しかったため自作しました。
