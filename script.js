@@ -2,7 +2,7 @@
 const cardRanks = "23456789TJQKA";
 
 // ----------------------------------------------------
-// 【完全データ駆動版】提供いただいたチャートに基づくGTOレンジ
+// 【完全データ駆動版】6-maxに基づくGTOレンジ
 // ----------------------------------------------------
 const gtoRanges = {
     "UTG_open": {
@@ -103,25 +103,25 @@ function generateRandomQuiz() {
     document.getElementById("position").innerText = sit.pos;
 }
 
-// ユーザーの手札が、指定されたレンジ文字列（例: "77+", "A2s-A5s"）に含まれるか判定する関数
+// ユーザーの手札が、指定されたレンジ文字列に含まれるか判定
 function isHandInRange(r1, r2, hand, rangeStr) {
     if (!rangeStr) return false;
     const tokens = rangeStr.split(", ");
     
     for (let token of tokens) {
-        // ① "+" 形式の判定 (例: 77+, A2s+)
+        // ① "+" 形式の判定 (例: A2s+)
         if (token.endsWith("+")) {
             const base = token.slice(0, -1);
-            if (hand.length === 2 && base.length === 2) { // ペア (77+)
+            if (hand.length === 2 && base.length === 2) { // ペア
                 if (cardRanks.indexOf(r1) >= cardRanks.indexOf(base[0])) return true;
-            } else if (hand.endsWith("s") && base.endsWith("s")) { // スーテッド (A2s+)
+            } else if (hand.endsWith("s") && base.endsWith("s")) { // スーテッド
                 if (base[0] === r1 && cardRanks.indexOf(r2) >= cardRanks.indexOf(base[1])) return true;
                 if (base[0] === "T" && cardRanks.indexOf(r1) >= cardRanks.indexOf("T") && cardRanks.indexOf(r2) >= cardRanks.indexOf(base[1])) return true;
-            } else if (hand.endsWith("o") && base.endsWith("o")) { // オフスーテッド (ATo+)
+            } else if (hand.endsWith("o") && base.endsWith("o")) { // オフスーテッド
                 if (base[0] === r1 && cardRanks.indexOf(r2) >= cardRanks.indexOf(base[1])) return true;
             }
         }
-        // ② "-" 形式（範囲指定）の判定 (例: 22-88, A2s-A5s)
+        // ② "-" 形式（範囲指定）の判定 (例: A2s-A5s)
         else if (token.includes("-")) {
             const [start, end] = token.split("-");
             const idx1 = cardRanks.indexOf(r1);
